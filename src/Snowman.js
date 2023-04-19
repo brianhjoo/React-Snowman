@@ -73,11 +73,14 @@ function Snowman({
     ));
   }
 
+  const message = `You lose. The correct word is: ${answer}`;
+
   return (
       <div className="Snowman">
-        <img src={(images)[nWrong]} alt={nWrong} />
+        <img id='snowman-image' src={(images)[nWrong]} alt={nWrong} />
+        <p>{`Number wrong: ${nWrong}`}</p>
         <p className="Snowman-word">{guessedWord()}</p>
-        <p>{generateButtons()}</p>
+        <p id='button-area'>{!(nWrong === maxWrong) ? generateButtons() : message}</p>
       </div>
   );
 }
