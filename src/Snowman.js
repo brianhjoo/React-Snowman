@@ -86,17 +86,16 @@ function Snowman({
    */
   function showButtonsOrWinLossMessage() {
     if (nWrong === maxWrong) {
-      return lossMessage
+      return lossMessage;
     }
     for (const letter of answer) {
       if (!guessedLetters.has(letter)) {
-        return generateButtons()
+        return generateButtons();
       }
     }
     return winMessage;
-
-
   }
+  
   /** Restarts the game, picking a new word and resetting number of guesses. */
   function handleRestart() {
     setGuessedLetters(new Set());

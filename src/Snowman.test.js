@@ -4,9 +4,9 @@ import Snowman from './Snowman';
 
 
 
-describe('Game loss behavior', function() {
-  test('does not show button area after losing', function() {
-    const { container } = render(<Snowman words={["apple"]}/>);
+describe('Game loss behavior', function () {
+  test('shows loss message', function () {
+    const { container } = render(<Snowman words={["apple"]} />);
 
     const buttons = container.querySelectorAll('button');
     const buttonArea = container.querySelector('#button-area');
