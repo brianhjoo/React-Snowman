@@ -6,11 +6,11 @@ import Snowman from './Snowman';
 
 describe('Game loss behavior', function() {
   test('does not show button area after losing', function() {
-    const { container } = render(<Snowman />);
+    const { container } = render(<Snowman words={["apple"]}/>);
 
-    const buttons = document.querySelectorAll('button');
-    const buttonArea = document.querySelector('#button-area');
-    const snowmanImage = document.querySelector('#snowman-image');
+    const buttons = container.querySelectorAll('button');
+    const buttonArea = container.querySelector('#button-area');
+    const snowmanImage = container.querySelector('#snowman-image');
 
     for (let i = 19; i < buttons.length - 1; i++) {
       fireEvent.click(buttons[i]);
